@@ -8,6 +8,7 @@
     background-color: lightgrey; 
     min-height: 100vh; /*100% viewport height*/
     position: relative;
+    font-family: 'Rubik', sans-serif;
 }
 
 header {
@@ -16,26 +17,59 @@ header {
     top: 0px;
 }
 
-.start-page-box {
+.start-page-box { 
     position: absolute;
     top: 60px;
     left: 60px;
 }
 
-.cookies {
+.start-page-box h1 {
+    text-transform: uppercase;
+}
+
+.cookies { 
     min-width: 100vw;
     position: fixed;
     bottom: 0px;
+    color: #D200A2; 
 }
+
+/*TO DO: add background image*/
+/*TO DO: add arrow to .start-page-box*/
+/*TO DO: add centered arrow to page bottom*/
+/*TO DO: fix menu*/
+/*TO DO: add glow to .cookies text and adjust layout of text/button*/
 
 /*----------------------------------- PAGE 2 ----------------------------------*/
 
 .page-2 { /*parent container*/
-    background-color: lightblue; 
+    background-color: rgb(52, 51, 51); 
     min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    color: white;
 }
 
-/*TO DO: hide desktop-quote in mobile version*/
+.main-quote, .desktop-quote {
+    font-style: italic;
+}
+
+/*.space-ventures-heading span:first-of-type { 
+}*/
+.space-ventures-heading span:last-of-type { /*selects the last span element in .space-ventures-heading*/
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    color: lightgrey;
+}
+
+.page-2-right a { 
+    color: #D200A2;
+}
+
+/*TO DO: fix positioning of words in heading text*/
+/*TO DO: adjust quotation marks for .main-quote*/
+/*TO DO: add gradient color for desktop-quote and hide in mobile version*/
+/*TO DO: add background image*/
+/*TO DO: add arrow to link*/
 
 /*------------------------------- MEDIA QUERIES -------------------------------*/
 
@@ -48,3 +82,7 @@ header {
         width: 50%;
     }
 }
+
+/*TO DO: show desktop-quote in desktop version*/
+/*TO DO: adjust text size*/
+/*TO DO: add major tom image in desktop version*/
