@@ -1,0 +1,50 @@
+* { /*universal selector*/
+    border: 1px solid red; /*for guidance only, remove when layout done*/
+}
+
+/*--------------------------------- START PAGE ---------------------------------*/
+
+.start-page { /*parent container*/
+    background-color: lightgrey; 
+    min-height: 100vh; /*100% viewport height*/
+    position: relative;
+}
+
+header {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+
+.start-page-box {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+}
+
+.cookies {
+    min-width: 100vw;
+    position: fixed;
+    bottom: 0px;
+}
+
+/*----------------------------------- PAGE 2 ----------------------------------*/
+
+.page-2 { /*parent container*/
+    background-color: lightblue; 
+    min-height: 100vh;
+}
+
+/*TO DO: hide desktop-quote in mobile version*/
+
+/*------------------------------- MEDIA QUERIES -------------------------------*/
+
+/*desktop*/
+@media screen and (min-width: 1024px) {
+    .page-2 {
+        display: flex;
+    }
+    .page-2-left, .page-2-right {
+        width: 50%;
+    }
+}
