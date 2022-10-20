@@ -5,7 +5,6 @@
 /*--------------------------------- START PAGE ---------------------------------*/
 
 .start-page { /*parent container*/
-
     background-image: url("/images/astronaut.jpg");
     background-color: rgb(197, 197, 197); /*fallback color if background image fails to load*/
     background-size: cover; /*resizes the image to cover the container*/
@@ -22,7 +21,7 @@ header {
     top: 0px;
 }
 
-.start-page-box { 
+.start-page-box {
     position: absolute;
     top: 60px;
     left: 60px;
@@ -32,23 +31,45 @@ header {
     text-transform: uppercase;
 }
 
-.cookies { 
-    min-width: 100vw;
+.cookies { /*parent container*/
+    width: 100%;
+    height: 55px;
     position: fixed;
     bottom: 0px;
-    color: #D200A2; 
+    left: 0px;
+    background-color: rgb(0, 0, 30);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /*defines gap size between rows/columns*/
+}
+
+.cookies p {
+    color: #D200A2;
+    text-shadow: 0 0 5px #D200A2, 0 0 10px #D200A2; /*creates glowing effect, text-shadow: [x-offset] [y-offset] [blur-radius] [color];*/
+    padding: 5px 0px; /*top/bottom and right/left*/
+    margin: 0px 0px 0px 5px; /*top, right, bottom, left*/
+}
+
+.cookies button {
+    background-color: rgb(0, 0, 120);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 15px; /*top/bottom and right/left*/
+    margin-right: 25px;
 }
 
 /*TO DO: add arrow to .start-page-box*/
 /*TO DO: add centered arrow to page bottom*/
 /*TO DO: fix menu*/
-/*TO DO: add glow to .cookies text and adjust layout of text/button*/
 
 /*----------------------------------- PAGE 2 ----------------------------------*/
 
 .page-2 { /*parent container*/
     background-image: url("/images/galaxy.jpg");
-    background-color: rgb(45, 45, 45); 
+    background-color: rgb(45, 45, 45);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -61,7 +82,7 @@ header {
     font-style: italic;
 }
 
-/*.space-ventures-heading span:first-of-type { 
+/*.space-ventures-heading span:first-of-type {
 }*/
 .space-ventures-heading span:last-of-type { /*selects the last span element in .space-ventures-heading*/
     font-family: 'Times New Roman', Times, serif;
@@ -69,7 +90,7 @@ header {
     color: lightgrey;
 }
 
-.page-2-right a { 
+.page-2-right a {
     color: #D200A2;
 }
 
