@@ -1,6 +1,6 @@
-* { /*universal selector*/
-    border: 1px solid red; /*for guidance only, remove when layout done*/
-}
+/* * { 
+    border: 1px solid red; 
+} */ 
 
 /*--------------------------------- START PAGE ---------------------------------*/
 
@@ -12,7 +12,7 @@
     background-position: center;
     min-height: 100vh; /*100% viewport height*/
     position: relative;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Rubik', sans-serif; 
 }
 
 header {
@@ -21,14 +21,32 @@ header {
     top: 0px;
 }
 
-.start-page-box {
+.start-page-box { /*parent container*/
     position: absolute;
     top: 60px;
-    left: 60px;
+    left: 45px;
+    width: 7.5em;
+    height: 9em;
+    border: 0.2em solid black;
+    background-color: rgba(255, 255, 255, 0.5); /*0.5 makes color half transparent*/
+    padding: 10px 10px 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .start-page-box h1 {
     text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+}
+
+.start-page-box a {
+    text-decoration: none; /*to remove underline*/
+    color: black;
+    font-size: 65%;
 }
 
 .cookies { /*parent container*/
@@ -108,6 +126,27 @@ header {
     }
     .page-2-left, .page-2-right {
         width: 50%;
+    }
+
+    .h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
+        display: none; 
+    }
+    .start-page-box { /*"to the moon" container sizing and position*/
+        top: 90px;
+        left: 100px;
+        width: 23em;
+        height: 23em;
+        border: 0.3em solid black;
+        padding: 10px 10px 10px 10px;
+        
+    }
+    .start-page-box h1{ /*"to the moon" text sizing*/
+        font-size: 6em;
+        margin-top: 50px;
+    }
+    .start-page-box a { /*"to the moon" link change side and size*/
+        text-align: right;
+        font-size: 80%;
     }
 }
 
