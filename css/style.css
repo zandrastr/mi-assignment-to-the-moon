@@ -1,6 +1,9 @@
 /* * { 
     border: 1px solid red; 
 } */ 
+* { 
+   box-sizing: border-box; /*to include padding/border in all elements total width/height*/
+} 
 
 /*--------------------------------- START PAGE ---------------------------------*/
 
@@ -25,11 +28,11 @@ header {
     position: absolute;
     top: 60px;
     left: 45px;
-    width: 7.5em;
-    height: 9em;
+    width: 9em;
+    height: 10em;
     border: 0.2em solid black;
     background-color: rgba(255, 255, 255, 0.5); /*0.5 makes color half transparent*/
-    padding: 10px 10px 5px 10px;
+    padding: 10px 5px 5px 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,7 +41,7 @@ header {
 .start-page-box h1 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
     margin: 0;
 }
@@ -46,17 +49,16 @@ header {
 .start-page-box a {
     text-decoration: none; /*to remove underline*/
     color: black;
-    font-size: 65%;
+    font-size: 0.75rem;
 }
 
 .cookies { /*parent container*/
     width: 100%;
-    height: 55px;
     position: fixed;
     bottom: 0px;
     left: 0px;
     background-color: rgb(0, 0, 30);
-    padding: 10px;
+    padding: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,8 +68,8 @@ header {
 .cookies p {
     color: #D200A2;
     text-shadow: 0 0 5px #D200A2, 0 0 10px #D200A2; /*creates glowing effect, text-shadow: [x-offset] [y-offset] [blur-radius] [color];*/
-    padding: 5px 0px; /*top/bottom and right/left*/
-    margin: 0px 0px 0px 5px; /*top, right, bottom, left*/
+    margin: 0; 
+    font-size: 0.75rem;
 }
 
 .cookies button {
@@ -75,8 +77,8 @@ header {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 15px; /*top/bottom and right/left*/
-    margin-right: 25px;
+    padding: 8px 12px; /*top/bottom and right/left*/
+    font-size: 0.9rem;
 }
 
 /*TO DO: add arrow to .start-page-box*/
@@ -131,22 +133,30 @@ header {
     .h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
         display: none; 
     }
+
     .start-page-box { /*"to the moon" container sizing and position*/
         top: 90px;
         left: 100px;
-        width: 23em;
-        height: 23em;
+        width: 24em;
+        height: 24em;
         border: 0.3em solid black;
-        padding: 10px 10px 10px 10px;
-        
+        padding: 10px;
     }
     .start-page-box h1{ /*"to the moon" text sizing*/
-        font-size: 6em;
-        margin-top: 50px;
+        font-size: 6rem;
+        margin-top: 60px;
     }
     .start-page-box a { /*"to the moon" link change side and size*/
         text-align: right;
         font-size: 80%;
+        font-size: 1rem;
+    }
+
+    .cookies p {
+        font-size: 1rem;
+    }
+    .cookies button {
+        font-size: 0.9rem;
     }
 }
 
