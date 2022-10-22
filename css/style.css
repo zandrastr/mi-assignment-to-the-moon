@@ -1,4 +1,23 @@
 /*------------------------------------------------------------------------------*/
+/*------------------------------------ TO DO -----------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+/*PAGE 1:*/
+/*add arrow to .start-page-box*/
+/*add centered arrow to page bottom*/
+/*fix menu, middle hamburger bar transition*/
+/*fix menu, not smooth when closing*/
+/*fix menu, links styling*/
+
+/*PAGE 2:*/
+/*fix positioning of words in heading text*/
+/*adjust quotation marks for .main-quote*/
+/*add gradient color for desktop-quote + hide in mobile version*/
+/*add arrow to link*/
+/*add major tom image in desktop version*/
+/*adjust text size*/
+
+/*------------------------------------------------------------------------------*/
 /*---------------------------------- UNIVERSAL ---------------------------------*/
 /*------------------------------------------------------------------------------*/
 
@@ -93,7 +112,6 @@ nav {
     opacity: 1;
     visibility: hidden;/*instead of using display: none*/
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.5); /*cubic-bezier: transition effect with variable speed from start to end*/
-    
 }
 
 input:checked + .menu nav {
@@ -178,10 +196,6 @@ ul { /*parent container of the list items (menu content/links)*/
     font-size: 0.9rem;
 }
 
-/*TO DO: add arrow to .start-page-box*/
-/*TO DO: add centered arrow to page bottom*/
-/*TO DO: fix menu*/
-
 /*------------------------------------------------------------------------------*/
 /*----------------------------------- PAGE 2 -----------------------------------*/
 /*------------------------------------------------------------------------------*/
@@ -212,11 +226,6 @@ ul { /*parent container of the list items (menu content/links)*/
 .page-2-right a {
     color: #D200A2;
 }
-
-/*TO DO: fix positioning of words in heading text*/
-/*TO DO: adjust quotation marks for .main-quote*/
-/*TO DO: add gradient color for desktop-quote and hide in mobile version*/
-/*TO DO: add arrow to link*/
 
 /*------------------------------------------------------------------------------*/
 /*-------------------------------- MEDIA QUERIES -------------------------------*/
@@ -260,7 +269,3 @@ ul { /*parent container of the list items (menu content/links)*/
         font-size: 0.9rem;
     }
 }
-
-/*TO DO: show desktop-quote in desktop version*/
-/*TO DO: adjust text size*/
-/*TO DO: add major tom image in desktop version*/
