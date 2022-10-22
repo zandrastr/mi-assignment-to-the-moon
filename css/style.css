@@ -1,3 +1,7 @@
+/*------------------------------------------------------------------------------*/
+/*---------------------------------- UNIVERSAL ---------------------------------*/
+/*------------------------------------------------------------------------------*/
+
 /* * { 
     border: 1px solid red; 
 } */ 
@@ -5,7 +9,9 @@
    box-sizing: border-box; /*to include padding/border in all elements total width/height*/
 } 
 
+/*------------------------------------------------------------------------------*/
 /*--------------------------------- START PAGE ---------------------------------*/
+/*------------------------------------------------------------------------------*/
 
 .start-page { /*parent container*/
     background-image: url("/images/astronaut.jpg");
@@ -18,11 +24,98 @@
     font-family: 'Rubik', sans-serif; 
 }
 
-header {
+/*------------------------------------------------------------------------------*/
+/*-------------------------------- HAMBURGER MENU ------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.hamburger-button {
     position: fixed;
-    right: 0px;
-    top: 0px;
+    right: 20px; 
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    padding: 0;
+    border: none;
+    z-index: 3; /*to control order of elements/"layers"*/
+    pointer-events: none; /*element will not be target of pointer events/"deactivates" button*/
 }
+
+.hamburger-button span { /*to create hamburger button with 3 bars*/
+    display: block; /*to be able to apply width/height (default for span is inline)*/
+    width: 30px;
+    height: 5px;
+    background-color: black;
+    border: 0.5px solid rgba(225, 225, 225, 0.5); /*to make menu visible on both light and dark background*/
+    border-radius: 6px; /*rounded corners*/
+    margin: 4px 0px 4px 2px; 
+}
+
+input { /*the "invisible" checkbox element to make hamburger button interactive*/
+    position: fixed;
+    right: 20px; 
+    top: 20px;
+    width: 35px;
+    height: 35px;
+    z-index: 2; 
+    opacity: 0; /*to be invisible but keep same functionality*/
+    cursor: pointer; /*changes the mouse cursor*/
+}
+
+input:checked + .menu button span { /*when input is checked = menu open, + is to select next following element*/
+    position: absolute;
+    transition: all 0.3 ease-in-out; /*to make transition of X smooth*/
+}
+
+input:checked + .menu button span:nth-child(1) { /*selects first span element, bar 1*/
+    transform: rotate(45deg) translate(-4px, -4px); /*to create "close-menu-X", translate to change position*/
+}
+
+input:checked + .menu button span:nth-child(2) { /*selects second span element, bar 2*/
+    opacity: 0; /*to make middle bar invisible*/
+}
+
+input:checked + .menu button span:nth-child(3) { /*selects third span element, bar 3*/
+    transform: rotate(-45deg) translate(4px, -4px); /*to create "close-menu-X", translate to change position*/
+}
+
+/*------------------------------------------------------------------------------*/
+/*----------------------------------- MENU NAV ---------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+    visibility: hidden;/*instead of using display: none*/
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.5); /*cubic-bezier: transition effect with variable speed from start to end*/
+    
+}
+
+input:checked + .menu nav {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+}
+
+ul { /*parent container of the list items (menu content/links)*/
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none; /*to remove bullet points*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------------------*/
+/*-------------------------- START PAGE BOX - TO THE MOON ----------------------*/
+/*------------------------------------------------------------------------------*/
 
 .start-page-box { /*parent container*/
     position: absolute;
@@ -51,6 +144,10 @@ header {
     color: black;
     font-size: 0.75rem;
 }
+
+/*------------------------------------------------------------------------------*/
+/*------------------------------------ COOKIES ---------------------------------*/
+/*------------------------------------------------------------------------------*/
 
 .cookies { /*parent container*/
     width: 100%;
@@ -85,7 +182,9 @@ header {
 /*TO DO: add centered arrow to page bottom*/
 /*TO DO: fix menu*/
 
-/*----------------------------------- PAGE 2 ----------------------------------*/
+/*------------------------------------------------------------------------------*/
+/*----------------------------------- PAGE 2 -----------------------------------*/
+/*------------------------------------------------------------------------------*/
 
 .page-2 { /*parent container*/
     background-image: url("/images/galaxy.jpg");
@@ -119,7 +218,9 @@ header {
 /*TO DO: add gradient color for desktop-quote and hide in mobile version*/
 /*TO DO: add arrow to link*/
 
-/*------------------------------- MEDIA QUERIES -------------------------------*/
+/*------------------------------------------------------------------------------*/
+/*-------------------------------- MEDIA QUERIES -------------------------------*/
+/*------------------------------------------------------------------------------*/
 
 /*desktop*/
 @media screen and (min-width: 1024px) {
