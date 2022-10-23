@@ -5,9 +5,7 @@
 /*PAGE 1:*/
 /*add arrow to .start-page-box*/
 /*add centered arrow to page bottom*/
-/*fix menu, middle hamburger bar transition*/
-/*fix menu, not smooth when closing*/
-/*fix menu, links styling*/
+/*fix menu, not smooth when opening/closing*/
 
 /*PAGE 2:*/
 /*fix positioning of words in heading text*/
@@ -21,12 +19,12 @@
 /*---------------------------------- UNIVERSAL ---------------------------------*/
 /*------------------------------------------------------------------------------*/
 
-/* * { 
-    border: 1px solid red; 
-} */ 
-* { 
+/* * {
+    border: 1px solid red;
+} */
+* {
    box-sizing: border-box; /*to include padding/border in all elements total width/height*/
-} 
+}
 
 /*------------------------------------------------------------------------------*/
 /*--------------------------------- START PAGE ---------------------------------*/
@@ -40,7 +38,7 @@
     background-position: center;
     min-height: 100vh; /*100% viewport height*/
     position: relative;
-    font-family: 'Rubik', sans-serif; 
+    font-family: 'Rubik', sans-serif;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -49,10 +47,10 @@
 
 .hamburger-button {
     position: fixed;
-    right: 20px; 
+    right: 20px;
     top: 20px;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     background: transparent;
     padding: 0;
     border: none;
@@ -61,33 +59,48 @@
 }
 
 .hamburger-button span { /*to create hamburger button with 3 bars*/
+    position: relative;
+    left: 0;
+    margin-left: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     display: block; /*to be able to apply width/height (default for span is inline)*/
-    width: 30px;
-    height: 5px;
+    width: 40px;
+    height: 6px;
     background-color: black;
     border: 0.5px solid rgba(225, 225, 225, 0.5); /*to make menu visible on both light and dark background*/
     border-radius: 6px; /*rounded corners*/
-    margin: 4px 0px 4px 2px; 
 }
+
+/*---------- to make hamburger middle bar different + move on hover---------*/
+.hamburger-button span:nth-child(2) { 
+    margin-left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+input:hover + .menu button span:nth-child(2) { 
+    left: 6px;
+}
+/*--------------------------------------------------------------------------*/
 
 input { /*the "invisible" checkbox element to make hamburger button interactive*/
     position: fixed;
-    right: 20px; 
+    right: 20px;
     top: 20px;
-    width: 35px;
-    height: 35px;
-    z-index: 2; 
+    width: 45px;
+    height: 45px;
+    z-index: 2;
     opacity: 0; /*to be invisible but keep same functionality*/
     cursor: pointer; /*changes the mouse cursor*/
 }
 
 input:checked + .menu button span { /*when input is checked = menu open, + is to select next following element*/
     position: absolute;
-    transition: all 0.3 ease-in-out; /*to make transition of X smooth*/
+    transition: all 0.2s ease-in-out; /*to make transition of X smooth*/
 }
 
 input:checked + .menu button span:nth-child(1) { /*selects first span element, bar 1*/
-    transform: rotate(45deg) translate(-4px, -4px); /*to create "close-menu-X", translate to change position*/
+    transform: rotate(45deg) translate(-4.5px, -4.5px); /*to create "close-menu-X", translate to change position*/
 }
 
 input:checked + .menu button span:nth-child(2) { /*selects second span element, bar 2*/
@@ -95,7 +108,7 @@ input:checked + .menu button span:nth-child(2) { /*selects second span element, 
 }
 
 input:checked + .menu button span:nth-child(3) { /*selects third span element, bar 3*/
-    transform: rotate(-45deg) translate(4px, -4px); /*to create "close-menu-X", translate to change position*/
+    transform: rotate(-45deg) translate(4.5px, -4.5px); /*to create "close-menu-X", translate to change position*/
 }
 
 /*------------------------------------------------------------------------------*/
@@ -106,9 +119,9 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; 
+    width: 100vw;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.85);
     opacity: 1;
     visibility: hidden;/*instead of using display: none*/
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.5); /*cubic-bezier: transition effect with variable speed from start to end*/
@@ -129,6 +142,15 @@ ul { /*parent container of the list items (menu content/links)*/
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+}
+
+.menu a {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    text-shadow: 0px 4px 1px rgb(180, 180, 180);
 }
 
 /*------------------------------------------------------------------------------*/
@@ -183,7 +205,7 @@ ul { /*parent container of the list items (menu content/links)*/
 .cookies p {
     color: #D200A2;
     text-shadow: 0 0 5px #D200A2, 0 0 10px #D200A2; /*creates glowing effect, text-shadow: [x-offset] [y-offset] [blur-radius] [color];*/
-    margin: 0; 
+    margin: 0;
     font-size: 0.75rem;
 }
 
@@ -231,6 +253,20 @@ ul { /*parent container of the list items (menu content/links)*/
 /*-------------------------------- MEDIA QUERIES -------------------------------*/
 /*------------------------------------------------------------------------------*/
 
+/*smaller than desktop screen size*/
+@media screen and (max-width: 1024px) {
+    input:checked + .menu { /*to hide/cover "to the moon"-box when menu open in mobile*/
+        background-image: url("/images/astronaut.jpg");
+        background-color: rgb(197, 197, 197); 
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh; 
+        position: relative;
+        z-index: 1;
+    }
+}
+
 /*desktop*/
 @media screen and (min-width: 1024px) {
     .page-2 {
@@ -241,7 +277,7 @@ ul { /*parent container of the list items (menu content/links)*/
     }
 
     .h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
-        display: none; 
+        display: none;
     }
 
     .start-page-box { /*"to the moon" container sizing and position*/
@@ -268,4 +304,15 @@ ul { /*parent container of the list items (menu content/links)*/
     .cookies button {
         font-size: 0.9rem;
     }
+
+    .menu a {
+        font-size: 3.8rem;
+        line-height: 1.3;
+        margin-bottom: 0px;
+        margin-top: 0;
+    }
+    .menu a:hover {
+        border-bottom: 7px solid #D200A2; /*to create text underline without shadow*/
+    }
 }
+
