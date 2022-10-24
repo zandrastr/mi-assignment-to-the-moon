@@ -3,17 +3,17 @@
 /*------------------------------------------------------------------------------*/
 
 /*PAGE 1:*/
-/*add arrow to .start-page-box*/
-/*add centered arrow to page bottom*/
+/*fix arrow to .start-page-box*/
+/*fix centered arrow to page bottom*/
 /*fix menu, not smooth when opening/closing*/
 
 /*PAGE 2:*/
-/*fix positioning of words in heading text*/
 /*adjust quotation marks for .main-quote*/
-/*add gradient color for desktop-quote + hide in mobile version*/
 /*add arrow to link*/
 /*add major tom image in desktop version*/
-/*adjust text size*/
+/*adjust positioning / text size*/
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 /*------------------------------------------------------------------------------*/
 /*---------------------------------- UNIVERSAL ---------------------------------*/
@@ -25,6 +25,8 @@
 * {
    box-sizing: border-box; /*to include padding/border in all elements total width/height*/
 }
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 /*------------------------------------------------------------------------------*/
 /*--------------------------------- START PAGE ---------------------------------*/
@@ -185,6 +187,24 @@ ul { /*parent container of the list items (menu content/links)*/
     font-size: 0.75rem;
 }
 
+.down-arrow {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 0.2em solid black;
+}
+.down-arrow span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    color: white;
+}
+
 /*------------------------------------------------------------------------------*/
 /*------------------------------------ COOKIES ---------------------------------*/
 /*------------------------------------------------------------------------------*/
@@ -200,6 +220,7 @@ ul { /*parent container of the list items (menu content/links)*/
     justify-content: space-between;
     align-items: center;
     gap: 10px; /*defines gap size between rows/columns*/
+    z-index: 2;
 }
 
 .cookies p {
@@ -218,6 +239,8 @@ ul { /*parent container of the list items (menu content/links)*/
     font-size: 0.9rem;
 }
 
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
 /*------------------------------------------------------------------------------*/
 /*----------------------------------- PAGE 2 -----------------------------------*/
 /*------------------------------------------------------------------------------*/
@@ -233,28 +256,140 @@ ul { /*parent container of the list items (menu content/links)*/
     color: white;
 }
 
-.main-quote, .desktop-quote {
-    font-style: italic;
+/*------------------------------------------------------------------------------*/
+/*-------------------------------- SPACE VENTURES ------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.space-ventures-heading {
+    margin: 0;
 }
 
-/*.space-ventures-heading span:first-of-type {
-}*/
+.space-ventures-heading span:first-of-type { /*selects the first span element in .space-ventures-heading*/
+    display: block;
+    position: relative;
+    z-index: 1;
+    font-size: 4rem;
+}
 .space-ventures-heading span:last-of-type { /*selects the last span element in .space-ventures-heading*/
     font-family: 'Times New Roman', Times, serif;
     font-style: bold;
-    color: lightgrey;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    top: -45px;
+    left: 8px;
+    z-index: 0;
+    font-size: 5rem;
 }
+
+/*------------------------------------------------------------------------------*/
+/*-------------------------- GROUND CONTROL TO MAJOR TOM -----------------------*/
+/*------------------------------------------------------------------------------*/
+
+.page-2-left h2 { /*heading - Ground control to Major Tom */
+    font-size: 1rem;
+}
+
+.page-2-left p { /*text - Ground control to Major Tom*/
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+/*------------------------------------------------------------------------------*/
+/*--------------------------------- MAIN QUOTE ---------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.main-quote {
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    position: relative;
+    margin: 10px;
+    display: inline;
+}
+
+.main-quote::before { /*pseudo element*/
+    position: absolute;
+    content: open-quote;
+    top: -3px;
+    left: -3px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4em;
+  }
+
+  .main-quote::after {
+    position: absolute;
+    content: close-quote;
+    bottom: -3px;
+    right: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4em;
+  }
+
+/*------------------------------------------------------------------------------*/
+/*-------------------------------- DESKTOP QUOTE -------------------------------*/
+/*------------------------------------------------------------------------------*/
+
+.desktop-quote {
+    display: none; /*to hide in mobile version*/
+    font-style: italic;
+    font-size: 1.8rem;
+    background: #D200A2;
+    background: -webkit-linear-gradient(to bottom right, #D200A2 0%, #B0B0B0 50%, #D200A2 100%);
+    background: -moz-linear-gradient(to bottom right, #D200A2 0%, #B0B0B0 50%, #D200A2 100%);
+    background: linear-gradient(to bottom right, #D200A2 0%, #B0B0B0 50%, #D200A2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.35;
+    margin: 0;
+}
+
+.desktop-quote::before { /*pseudo element*/
+    content: no-open-quote;
+}
+
+.desktop-quote::before { /*pseudo element*/
+    content: no-close-quote;
+}
+
+/*------------------------------------------------------------------------------*/
+/*------------------------ TEXT - AM I SITTING IN A TIN CAN... -----------------*/
+/*------------------------------------------------------------------------------*/
+
+.page-2-right p {
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+/*------------------------------------------------------------------------------*/
+/*-------------------------------- MAJOR TOM IMAGE -----------------------------*/
+/*------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------*/
+/*------------------------------- LINK - READ MORE -----------------------------*/
+/*------------------------------------------------------------------------------*/
 
 .page-2-right a {
     color: #D200A2;
+    font-size: 0.8rem;
 }
 
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
 /*------------------------------------------------------------------------------*/
-/*-------------------------------- MEDIA QUERIES -------------------------------*/
+/*-------------------------------- @ MEDIA QUERIES -----------------------------*/
 /*------------------------------------------------------------------------------*/
 
-/*smaller than desktop screen size*/
+/*------------------------------------------------------------------------------*/
+/*--------------------- @ SMALLER THAN DESKTOP SCREEN SIZE ---------------------*/
+/*------------------------------------------------------------------------------*/
 @media screen and (max-width: 1024px) {
+
+/*------------------ MENU NAV / START PAGE BOX - TO THE MOON -------------------*/
+
     input:checked + .menu { /*to hide/cover "to the moon"-box when menu open in mobile*/
         background-image: url("/images/astronaut.jpg");
         background-color: rgb(197, 197, 197); 
@@ -266,53 +401,64 @@ ul { /*parent container of the list items (menu content/links)*/
         z-index: 1;
     }
 }
-
-/*desktop*/
+/*------------------------------------------------------------------------------*/
+/*--------------------------------- @ DESKTOP ----------------------------------*/
+/*------------------------------------------------------------------------------*/
 @media screen and (min-width: 1024px) {
+
+/*-------------------------- START PAGE BOX - TO THE MOON ----------------------*/
+
+.h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
+    display: none;
+}
+.start-page-box { /*"to the moon" container sizing and position*/
+    top: 90px;
+    left: 100px;
+    width: 24em;
+    height: 24em;
+    border: 0.3em solid black;
+    padding: 10px;
+}
+.start-page-box h1{ /*"to the moon" text sizing*/
+    font-size: 6rem;
+    margin-top: 60px;
+}
+.start-page-box a { /*"to the moon" link change side and size*/
+    text-align: right;
+    font-size: 80%;
+    font-size: 1rem;
+}
+/*----------------------------------- MENU NAV ---------------------------------*/
+
+.menu a {
+    font-size: 3.8rem;
+    line-height: 1.3; /*unitless = multiplies by elements font size */
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+.menu a:hover {
+    border-bottom: 7px solid #D200A2; /*to create text underline without shadow*/
+}
+/*------------------------------------ COOKIES ---------------------------------*/
+
+.cookies p {
+    font-size: 1rem;
+}
+.cookies button {
+    font-size: 0.9rem;
+}
+/*----------------------------------- PAGE 2 -----------------------------------*/
     .page-2 {
-        display: flex;
+        display: flex; 
+        gap: 150px; /*gap between left and right section*/
+        padding: 65px
     }
     .page-2-left, .page-2-right {
         width: 50%;
     }
 
-    .h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
-        display: none;
-    }
-
-    .start-page-box { /*"to the moon" container sizing and position*/
-        top: 90px;
-        left: 100px;
-        width: 24em;
-        height: 24em;
-        border: 0.3em solid black;
-        padding: 10px;
-    }
-    .start-page-box h1{ /*"to the moon" text sizing*/
-        font-size: 6rem;
-        margin-top: 60px;
-    }
-    .start-page-box a { /*"to the moon" link change side and size*/
-        text-align: right;
-        font-size: 80%;
-        font-size: 1rem;
-    }
-
-    .cookies p {
-        font-size: 1rem;
-    }
-    .cookies button {
-        font-size: 0.9rem;
-    }
-
-    .menu a {
-        font-size: 3.8rem;
-        line-height: 1.3;
-        margin-bottom: 0px;
-        margin-top: 0;
-    }
-    .menu a:hover {
-        border-bottom: 7px solid #D200A2; /*to create text underline without shadow*/
+    .desktop-quote {
+        display: block; /*to show in desktop version*/
     }
 }
 
