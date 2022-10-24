@@ -1,13 +1,4 @@
 /*------------------------------------------------------------------------------*/
-/*------------------------------------ TO DO -----------------------------------*/
-/*------------------------------------------------------------------------------*/
-
-/*PAGE 1:*/
-/*fix menu, not smooth when opening/closing*/
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
-/*------------------------------------------------------------------------------*/
 /*---------------------------------- UNIVERSAL ---------------------------------*/
 /*------------------------------------------------------------------------------*/
 
@@ -15,13 +6,11 @@
     content: "";
     clear: both;
     display: table;
-  }
+}
 
 * {
    box-sizing: border-box; /*to include padding/border in all elements total width/height*/
 }
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 /*------------------------------------------------------------------------------*/
 /*--------------------------------- START PAGE ---------------------------------*/
@@ -82,16 +71,14 @@
     border-radius: 6px; /*rounded corners*/
 }
 
-/*---------- to make hamburger middle bar different + move on hover---------*/
-.hamburger-button span:nth-child(2) { 
+.hamburger-button span:nth-child(2) { /*to make hamburger middle bar different / move on hover*/
     margin-left: 0;
     transition: all 0.3s ease-in-out;
 }
 
-input:hover + .menu button span:nth-child(2) { 
+input:hover + .menu button span:nth-child(2) { /*to make hamburger middle bar different / move on hover*/
     left: 6px;
 }
-/*--------------------------------------------------------------------------*/
 
 input { /*the "invisible" checkbox element to make hamburger button interactive*/
     position: fixed;
@@ -132,9 +119,9 @@ nav {
     width: 100vw;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.85);
-    opacity: 1;
+    opacity: 0;
     visibility: hidden;/*instead of using display: none*/
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 0.5); /*cubic-bezier: transition effect with variable speed from start to end*/
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 0.5); /*cubic-bezier: transition effect with variable speed from start to end*/
 }
 
 input:checked + .menu nav {
@@ -246,8 +233,6 @@ ul { /*parent container of the list items (menu content/links)*/
     padding: 8px 12px; /*top/bottom and right/left*/
     font-size: 0.8rem;
 }
-
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 /*------------------------------------------------------------------------------*/
 /*----------------------------------- PAGE 2 -----------------------------------*/
@@ -413,8 +398,6 @@ ul { /*parent container of the list items (menu content/links)*/
     left: 8px;
 }
 
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-
 /*------------------------------------------------------------------------------*/
 /*-------------------------------- @ MEDIA QUERIES -----------------------------*/
 /*------------------------------------------------------------------------------*/
@@ -555,7 +538,6 @@ ul { /*parent container of the list items (menu content/links)*/
         height: auto;
         float: right; /*to place on right side*/
         transform: rotate(3deg);
-
+        padding: 5px;
     }
 }
-
