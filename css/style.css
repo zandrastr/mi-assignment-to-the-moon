@@ -5,20 +5,18 @@
 /*PAGE 1:*/
 /*fix menu, not smooth when opening/closing*/
 
-/*PAGE 2:*/
-/*adjust quotation marks for .main-quote*/
-/*add major tom image in desktop version*/
-/*adjust positioning / text size*/
-
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 /*------------------------------------------------------------------------------*/
 /*---------------------------------- UNIVERSAL ---------------------------------*/
 /*------------------------------------------------------------------------------*/
 
-/* * {
-    border: 1px solid red;
-} */
+.clearfix::after { /*clearfix hack to clear floats*/
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 * {
    box-sizing: border-box; /*to include padding/border in all elements total width/height*/
 }
@@ -426,7 +424,7 @@ ul { /*parent container of the list items (menu content/links)*/
 /*------------------------------------------------------------------------------*/
 @media screen and (max-width: 1024px) {
 
-/*------------------ MENU NAV / START PAGE BOX - TO THE MOON -------------------*/
+    /*------------------ MENU NAV / START PAGE BOX - TO THE MOON -------------------*/
 
     input:checked + .menu { /*to hide/cover "to the moon"-box when menu open in mobile*/
         background-image: url("/images/astronaut.jpg");
@@ -444,57 +442,60 @@ ul { /*parent container of the list items (menu content/links)*/
 /*------------------------------------------------------------------------------*/
 @media screen and (min-width: 1024px) {
 
-/*---------------------------------- START PAGE --------------------------------*/
-.down-arrow span { /*change size of center/bottom arrow*/
-    font-size: 2.5rem;
-}
-/*-------------------------- START PAGE BOX - TO THE MOON ----------------------*/
+    /*---------------------------------- START PAGE --------------------------------*/
+    .down-arrow span { /*change size of center/bottom arrow*/
+        font-size: 2.5rem;
+    }
 
-.h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
-    display: none;
-}
-.start-page-box { /*"to the moon" container sizing and position*/
-    top: 90px;
-    left: 100px;
-    width: 24em;
-    height: 24em;
-    border: 0.3em solid black;
-    padding: 10px;
-}
-.start-page-box h1{ /*"to the moon" text sizing*/
-    font-size: 6rem;
-    margin-top: 60px;
-}
-.start-page-box a { /*"to the moon" link change side and size*/
-    text-align: right;
-    font-size: 80%;
-    font-size: 1rem;
-    margin-right: 8px;
-}
-.read-our-story-arrow span { /*read our story arrow change size*/
-    font-size: 1.1rem;
-}
+    /*-------------------------- START PAGE BOX - TO THE MOON ----------------------*/
 
-/*----------------------------------- MENU NAV ---------------------------------*/
+    .h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
+        display: none;
+    }
+    .start-page-box { /*"to the moon" container sizing and position*/
+        top: 90px;
+        left: 100px;
+        width: 24em;
+        height: 24em;
+        border: 0.3em solid black;
+        padding: 10px;
+    }
+    .start-page-box h1{ /*"to the moon" text sizing*/
+        font-size: 6rem;
+        margin-top: 60px;
+    }
+    .start-page-box a { /*"to the moon" link change side and size*/
+        text-align: right;
+        font-size: 1rem;
+        margin-right: 8px;
+    }
+    .read-our-story-arrow span { /*read our story arrow change size*/
+        font-size: 1.1rem;
+    }
 
-.menu a {
-    font-size: 3.8rem;
-    line-height: 1.3; /*unitless = multiplies by elements font size */
-    margin-bottom: 0px;
-    margin-top: 0;
-}
-.menu a:hover {
-    border-bottom: 7px solid #D200A2; /*to create text underline without shadow*/
-}
-/*------------------------------------ COOKIES ---------------------------------*/
+    /*----------------------------------- MENU NAV ---------------------------------*/
 
-.cookies p {
-    font-size: 1rem;
-}
-.cookies button {
-    font-size: 0.9rem;
-}
-/*----------------------------------- PAGE 2 -----------------------------------*/
+    .menu a {
+        font-size: 3.8rem;
+        line-height: 1.3; /*unitless = multiplies by elements font size */
+        margin-bottom: 0px;
+        margin-top: 0;
+    }
+    .menu a:hover {
+        border-bottom: 7px solid #D200A2; /*to create text underline without shadow*/
+    }
+
+    /*------------------------------------ COOKIES ---------------------------------*/
+
+    .cookies p {
+        font-size: 1rem;
+    }
+    .cookies button {
+        font-size: 0.9rem;
+    }
+
+    /*----------------------------------- PAGE 2 -----------------------------------*/
+
     .page-2 {
         display: flex; 
         flex-direction: row;
@@ -504,11 +505,51 @@ ul { /*parent container of the list items (menu content/links)*/
     .page-2-left, .page-2-right {
         width: 50%;
     }
-
+    .space-ventures-heading span:first-of-type { /*selects the first span element in .space-ventures-heading*/
+        font-size: 6rem;
+    }
+    .space-ventures-heading span:last-of-type { /*selects the last span element in .space-ventures-heading*/
+        top: -62px;
+        left: 9px;
+        font-size: 7.5rem;
+    }
+    .page-2-left h3 { /*heading - Ground control to Major Tom */
+        font-size: 1.8rem;
+    }
+    .page-2-left p { /*text - Ground control to Major Tom*/
+        font-size: 0.9rem;
+    }
+    .main-quote {
+        padding: 0;
+        margin: 25px;
+        font-size: 1.3rem;
+    }
+    .main-quote::before { /*pseudo element, to add and style quotation marks*/
+        top: -41px;
+        left: -54px;
+        font-size: 6em;
+    }
+    .main-quote::after {
+        bottom: -99px;
+        right: 260px;
+        font-size: 6em;
+    }
     .desktop-quote {
         display: block; /*to show in desktop version*/
+        font-size: 2.3rem;
+        margin: 50px 0px;
     }
-    .major-tom {
+    .page-2-right p {
+        font-size: 0.9rem;
+    }
+    .page-2-right a {
+        color: #D200A2;
+        font-size: 0.9rem;
+    }
+    .read-more-about-arrow span {
+        font-size: 1.1rem;
+    }
+    .major-tom { /*major tom image*/
         display: block;
         width: 100px;
         height: auto;
