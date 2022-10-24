@@ -237,7 +237,7 @@ ul { /*parent container of the list items (menu content/links)*/
     color: #D200A2;
     text-shadow: 0 0 5px #D200A2, 0 0 10px #D200A2; /*creates glowing effect, text-shadow: [x-offset] [y-offset] [blur-radius] [color];*/
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
 }
 
 .cookies button {
@@ -246,7 +246,7 @@ ul { /*parent container of the list items (menu content/links)*/
     text-transform: uppercase;
     font-weight: bold;
     padding: 8px 12px; /*top/bottom and right/left*/
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
@@ -264,6 +264,7 @@ ul { /*parent container of the list items (menu content/links)*/
     min-height: 100vh;
     font-family: 'Rubik', sans-serif;
     color: white;
+    padding: 35px;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -271,58 +272,64 @@ ul { /*parent container of the list items (menu content/links)*/
 /*------------------------------------------------------------------------------*/
 
 .space-ventures-heading {
-    margin: 0;
+    font-size: 0rem;
+    margin: 0 0 0 7px;
 }
 
 .space-ventures-heading span:first-of-type { /*selects the first span element in .space-ventures-heading*/
     display: block;
     position: relative;
     z-index: 1;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .space-ventures-heading span:last-of-type { /*selects the last span element in .space-ventures-heading*/
     font-family: 'Times New Roman', Times, serif;
-    font-style: bold;
-    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.6);
     position: relative;
-    top: -45px;
-    left: 8px;
+    top: -43px;
+    left: 43px;
     z-index: 0;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 /*------------------------------------------------------------------------------*/
 /*-------------------------- GROUND CONTROL TO MAJOR TOM -----------------------*/
 /*------------------------------------------------------------------------------*/
 
-.page-2-left h2 { /*heading - Ground control to Major Tom */
-    font-size: 1rem;
+.page-2-left h3 { /*heading - Ground control to Major Tom */
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 .page-2-left p { /*text - Ground control to Major Tom*/
-    font-size: 0.8rem;
-    line-height: 1.8;
+    font-size: 0.55rem;
+    line-height: 1.5;
 }
 
 /*------------------------------------------------------------------------------*/
 /*--------------------------------- MAIN QUOTE ---------------------------------*/
 /*------------------------------------------------------------------------------*/
 
+.main-quote-container {
+    display: flex;
+    justify-content: center;
+}
+
 .main-quote {
     font-style: italic;
     padding: 0;
-    margin: 0;
-    font-size: 1rem;
+    margin: 15px;
+    font-size: 0.9rem;
     position: relative;
-    margin: 10px;
     display: inline;
 }
 
-.main-quote::before { /*pseudo element*/
+.main-quote::before { /*pseudo element, to add and style quotation marks*/
     position: absolute;
     content: open-quote;
-    top: -3px;
-    left: -3px;
+    top: -16px;
+    left: -25px;
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Times New Roman', Times, serif;
     font-size: 4em;
@@ -331,8 +338,8 @@ ul { /*parent container of the list items (menu content/links)*/
   .main-quote::after {
     position: absolute;
     content: close-quote;
-    bottom: -3px;
-    right: 0;
+    bottom: -46px;
+    right: 193px;
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Times New Roman', Times, serif;
     font-size: 4em;
@@ -369,14 +376,17 @@ ul { /*parent container of the list items (menu content/links)*/
 /*------------------------------------------------------------------------------*/
 
 .page-2-right p {
-    font-size: 0.8rem;
-    line-height: 1.8;
+    font-size: 0.55rem;
+    line-height: 1.5;
 }
 
 /*------------------------------------------------------------------------------*/
 /*-------------------------------- MAJOR TOM IMAGE -----------------------------*/
 /*------------------------------------------------------------------------------*/
 
+.major-tom {
+    display: none;
+}
 
 /*------------------------------------------------------------------------------*/
 /*------------------------------- LINK - READ MORE -----------------------------*/
@@ -384,15 +394,15 @@ ul { /*parent container of the list items (menu content/links)*/
 
 .page-2-right a {
     color: #D200A2;
-    font-size: 0.8rem;
+    font-size: 0.55rem;
 }
 
 .read-more-about-arrow span {
     position: relative;
-    top: 2px;
+    top: 3px;
     left: 2px;
     color: #D200A2;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     transition: left 0.4s ease-in-out;
     font-variation-settings: /*google fonts material symbols settings*/
     'FILL' 0,
@@ -487,6 +497,7 @@ ul { /*parent container of the list items (menu content/links)*/
 /*----------------------------------- PAGE 2 -----------------------------------*/
     .page-2 {
         display: flex; 
+        flex-direction: row;
         gap: 150px; /*gap between left and right section*/
         padding: 65px
     }
@@ -496,6 +507,14 @@ ul { /*parent container of the list items (menu content/links)*/
 
     .desktop-quote {
         display: block; /*to show in desktop version*/
+    }
+    .major-tom {
+        display: block;
+        width: 100px;
+        height: auto;
+        float: right; /*to place on right side*/
+        transform: rotate(3deg);
+
     }
 }
 
