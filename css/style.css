@@ -3,13 +3,10 @@
 /*------------------------------------------------------------------------------*/
 
 /*PAGE 1:*/
-/*fix arrow to .start-page-box*/
-/*fix centered arrow to page bottom*/
 /*fix menu, not smooth when opening/closing*/
 
 /*PAGE 2:*/
 /*adjust quotation marks for .main-quote*/
-/*add arrow to link*/
 /*add major tom image in desktop version*/
 /*adjust positioning / text size*/
 
@@ -41,6 +38,19 @@
     min-height: 100vh; /*100% viewport height*/
     position: relative;
     font-family: 'Rubik', sans-serif;
+}
+
+.down-arrow span {
+    position: absolute;
+    left: 50%;
+    bottom: 75px;
+    color: white;
+    font-size: 2rem;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 48;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -187,22 +197,22 @@ ul { /*parent container of the list items (menu content/links)*/
     font-size: 0.75rem;
 }
 
-.down-arrow {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    border: 0.2em solid black;
+.read-our-story-arrow span {
+    position: relative;
+    top: 3px;
+    left: 2px;
+    color: black;
+    font-size: 0.8rem;
+    transition: left 0.4s ease-in-out;
+    font-variation-settings: /*google fonts material symbols settings*/
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48;
 }
-.down-arrow span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 50%;
-    bottom: 70px;
-    color: white;
+
+.read-our-story-arrow:hover span { /*to move arrow on hover*/
+    left: 8px;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -377,6 +387,24 @@ ul { /*parent container of the list items (menu content/links)*/
     font-size: 0.8rem;
 }
 
+.read-more-about-arrow span {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    color: #D200A2;
+    font-size: 0.9rem;
+    transition: left 0.4s ease-in-out;
+    font-variation-settings: /*google fonts material symbols settings*/
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+.read-more-about-arrow:hover span { /*to move arrow on hover*/
+    left: 8px;
+}
+
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 /*------------------------------------------------------------------------------*/
@@ -406,6 +434,10 @@ ul { /*parent container of the list items (menu content/links)*/
 /*------------------------------------------------------------------------------*/
 @media screen and (min-width: 1024px) {
 
+/*---------------------------------- START PAGE --------------------------------*/
+.down-arrow span { /*change size of center/bottom arrow*/
+    font-size: 2.5rem;
+}
 /*-------------------------- START PAGE BOX - TO THE MOON ----------------------*/
 
 .h1-linebreak-mobile { /*to create a different "to the moon" linebreak, display:none to <br> element*/
@@ -427,7 +459,12 @@ ul { /*parent container of the list items (menu content/links)*/
     text-align: right;
     font-size: 80%;
     font-size: 1rem;
+    margin-right: 8px;
 }
+.read-our-story-arrow span { /*read our story arrow change size*/
+    font-size: 1.1rem;
+}
+
 /*----------------------------------- MENU NAV ---------------------------------*/
 
 .menu a {
