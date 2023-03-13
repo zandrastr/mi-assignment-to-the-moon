@@ -1,9 +1,5 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8876955&assignment_repo_type=AssignmentRepo)
-# Inlämningsuppgift 2: To The Moon
-Se instruktioner för uppgiften på kurswebben.
+# To the moon 🚀
 
-I `assets`-mappen hittar du briefen från kunden (beskrivningen på vad du ska göra), information om designen, bilder till uppgiften och texter till uppgiften.
-
-I `screenshots`-mappen lägger du skärmdumpar på din sajt, när du är klar och har testat och färdigställt den så att den fungerar i alla webbläsare.
-
-I `validation-reports`-mappen lägger du PDF:er på dina valideringsrapporter på HTML och CSS.
+A school assignment that focused on HTML and CSS.   
+The project involved receiving a brief from a simulated client, which provided details on the design, images, and text required. My objective was to develop the webpage to meet the client's specifications.   
+Through this assignment I gained valuable experience in working with a client's requirements and expanding my knowledge in HTML and CSS.
