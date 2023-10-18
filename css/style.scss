@@ -17,7 +17,7 @@
 /*------------------------------------------------------------------------------*/
 
 .start-page { /*parent container*/
-    background-image: url("./images/astronaut.jpg");
+    background-image: url("../images/astronaut.jpg");
     background-color: rgb(197, 197, 197); /*fallback color if background image fails to load*/
     background-size: cover; /*resizes the image to cover the container*/
     background-repeat: no-repeat;
@@ -239,7 +239,7 @@ ul { /*parent container of the list items (menu content/links)*/
 /*------------------------------------------------------------------------------*/
 
 .page-2 { /*parent container*/
-    background-image: url("/images/galaxy.jpg");
+    background-image: url("../images/galaxy.jpg");
     background-color: rgb(45, 45, 45);
     background-size: cover;
     background-repeat: no-repeat;
@@ -410,7 +410,7 @@ ul { /*parent container of the list items (menu content/links)*/
     /*------------------ MENU NAV / START PAGE BOX - TO THE MOON -------------------*/
 
     input:checked + .menu { /*to hide/cover "to the moon"-box when menu open in mobile*/
-        background-image: url("/images/astronaut.jpg");
+        background-image: url("../images/astronaut.jpg");
         background-color: rgb(197, 197, 197); 
         background-size: cover; 
         background-repeat: no-repeat;
